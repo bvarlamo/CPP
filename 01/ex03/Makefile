@@ -1,0 +1,22 @@
+NAME	:=	violence
+
+SRCS	:=	HumanA.cpp HumanB.cpp main.cpp Weapon.cpp\
+
+OBJS	:=	${SRCS:.cpp=.o}
+
+CC		:=	c++
+
+CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+
+all:		${NAME}
+
+${NAME}:	${OBJS}
+		${CC} ${OBJS} -o ${NAME} ${CFLAGS}
+
+clean:
+		rm -f ${OBJS}
+
+fclean:		clean
+		rm -f ${NAME}
+
+re:			fclean all
